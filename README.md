@@ -25,6 +25,13 @@ This code will produce the following output:
 Logger::instance().log(Logger::INFO, "test ", "output");
 ```
 
+However, it is usually more convenient to use the predefined macros:
+
+```
+LOG_SIMPLE, LOG_INPUT, LOG_RESULT,
+LOG_INFO, LOG_WARNING, LOG_ERROR
+```
+
 ---
 
 ## 📁 File Output
@@ -47,11 +54,4 @@ To speed up terminal output, call this at the beginning of the program:
 
 ```cpp
 Logger::instance().init_stdio();
-```
-
-However, it is usually more convenient to use the predefined macros:
-
-```
-LOG_SIMPLE, LOG_INPUT, LOG_RESULT,
-LOG_INFO, LOG_WARNING, LOG_ERROR
 ```
