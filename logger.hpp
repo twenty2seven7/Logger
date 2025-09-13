@@ -92,9 +92,9 @@ class Logger {
 };
 
 
-#define LOG_SIMPLE(...)   Logger::instance().log(Logger::SIMPLE, __VA_ARGS__)
-#define LOG_INPUT(...)     Logger::instance().log(Logger::INPUT, __VA_ARGS__)
-#define LOG_RESULT(...)   Logger::instance().log(Logger::RESULT, __VA_ARGS__)
-#define LOG_INFO(...)     Logger::instance().log(Logger::INFO, __VA_ARGS__)
-#define LOG_WARNING(...)  Logger::instance().log(Logger::WARNING, "\033[33m\033[4m", __FILE__, ":", std::to_string(__LINE__), "\033[0m::", __func__, ": ", __VA_ARGS__)
-#define LOG_ERROR(...)    Logger::instance().log(Logger::ERROR, "\033[31m\033[4m", __FILE__, ":", std::to_string(__LINE__), "\033[0m::", __func__, ": ", __VA_ARGS__)
+#define LOG_SIMPLE(...)   Logger::instance().log(Logger::SIMPLE,  ##__VA_ARGS__)
+#define LOG_INPUT(...)    Logger::instance().log(Logger::INPUT,   ##__VA_ARGS__)
+#define LOG_RESULT(...)   Logger::instance().log(Logger::RESULT,  ##__VA_ARGS__)
+#define LOG_INFO(...)     Logger::instance().log(Logger::INFO,    ##__VA_ARGS__)
+#define LOG_WARNING(...)  Logger::instance().log(Logger::WARNING, "\033[33m\033[4m", __FILE__, ":", std::to_string(__LINE__), "\033[0m::", __func__, ": ", ##__VA_ARGS__)
+#define LOG_ERROR(...)    Logger::instance().log(Logger::ERROR,   "\033[31m\033[4m", __FILE__, ":", std::to_string(__LINE__), "\033[0m::", __func__, ": ", ##__VA_ARGS__)
