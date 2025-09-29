@@ -22,7 +22,7 @@ This code will produce the following output:
 ## 📄 Simple Output
 
 ```cpp
-Logger::instance().log(Logger::INFO, "test ", "output");
+Logger::instance().log(Logger::Info, "test ", "output");
 ```
 
 However, it is usually more convenient to use the predefined macros:
@@ -40,8 +40,8 @@ To redirect log output of specific levels to a file:
 
 ```cpp
 std::ofstream file("log.txt");
-Logger::instance().set_output(Logger::WARNING, file);
-Logger::instance().set_output(Logger::ERROR, file);
+Logger::instance().set_output(Logger::Warning, file);
+Logger::instance().set_output(Logger::Error, file);
 ```
 
 After this, all `WARNING` and `ERROR` messages will be written to `log.txt`.
